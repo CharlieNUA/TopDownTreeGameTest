@@ -54,11 +54,13 @@ void AtreegameCharacter::SetupPlayerInputComponent(class UInputComponent* Player
 {
 	// Set up gameplay key bindings
 	check(PlayerInputComponent);
-	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
+	/*PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
 	PlayerInputComponent->BindAxis("MoveForward", this, &AtreegameCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AtreegameCharacter::MoveRight);
+
+	*/
 
 	// We have 2 versions of the rotation bindings to handle different kinds of devices differently
 	// "turn" handles devices that provide an absolute delta, such as a mouse.
@@ -110,7 +112,7 @@ void AtreegameCharacter::LookUpAtRate(float Rate)
 	AddControllerPitchInput(Rate * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
 }
 
-void AtreegameCharacter::MoveForward(float Value)
+/* void AtreegameCharacter::MoveForward(float Value)
 {
 	if ((Controller != nullptr) && (Value != 0.0f))
 	{
@@ -138,3 +140,4 @@ void AtreegameCharacter::MoveRight(float Value)
 		AddMovementInput(Direction, Value);
 	}
 }
+*/
